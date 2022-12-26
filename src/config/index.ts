@@ -1,0 +1,4 @@
+const inchv2 = "0xe069cb01d06ba617bcdf789bf2ff0d5e5ca20c71";
+const inchv3 = "0x11111112542d85b3ef69ae05771c2dccff4faa26";
+const inchv4 = "0x1111111254fb6c44bac0bed2854e76f90643097d";
+const inchv5 = "0x1111111254eeb25477b68fb85ed929f73a960582";

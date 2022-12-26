@@ -1,0 +1,57 @@
+{
+  "name": "tradercopier",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=local nodemon index.js",
+    "start:local": "NODE_ENV=local nodemon index.js",
+    "start:production": "NODE_ENV=production node dist/server.js",
+    "build": "tsc",
+    "test": "NODE_ENV=test mocha tests/controllers.test.ts --exit"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "ts-node src/server.ts"
+  },
+  "dependencies": {
+    "@alch/alchemy-web3": "^1.4.7",
+    "bnc-sdk": "^4.6.3",
+    "cors": "^2.8.5",
+    "ethers": "^5.7.2",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.1",
+    "morgan": "^1.10.0",
+    "ws": "^8.11.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.15",
+    "@types/mocha": "^10.0.1",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.11.17",
+    "@types/sinon": "^10.0.13",
+    "@types/supertest": "^2.0.12",
+    "@types/swagger-jsdoc": "^6.0.1",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@types/ws": "^8.5.3",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7",
+    "prom-client": "^14.1.0",
+    "sinon": "^15.0.1",
+    "supertest": "^6.3.3",
+    "swagger-jsdoc": "^6.2.7",
+    "swagger-ui-express": "^4.6.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.9.4"
+  }
+}

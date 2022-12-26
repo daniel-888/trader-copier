@@ -1,0 +1,23 @@
+image:
+  file: .gitpod.Dockerfile
+tasks:
+  - command: mkdir -p /workspace/data && mongod --dbpath /workspace/data
+  - init: |
+      chmod +x ./start-mongodb.sh
+      chmod +x ./wait-for.sh
+      ./start-mongodb.sh latest "" 27019 tradercopier Mike password
+      yarn install
+      yarn test
+
+  - command: |
+      cp .env.docker .env
+      docker-compose up -d --build
+
+    openMode: split-right
+
+ports:
+  # response of root request will be appeared in the browser
+  - port: 3000
+    name: root response
+    onOpen: open-browser
+    visibility: public
