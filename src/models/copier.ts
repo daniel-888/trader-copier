@@ -1,4 +1,4 @@
-import { Schema, model, Document, trusted } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 
 export interface ICopierQuery extends Document {
   _id: Schema.Types.ObjectId;

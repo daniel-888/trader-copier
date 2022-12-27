@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+import init, { initCopy } from "./trade";
+
 const options = {
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE,
@@ -19,11 +21,19 @@ const initDB = async (): Promise<void> => {
   const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
   return new Promise((resolve, reject) => {
+    initCopy();
     mongoose
       .connect(url)
       .then(() => {
         console.log("MongoDB is connected\n", url);
-        resolve();
+        init()
+          .then(() => {
+            console.log("tx listener started");
+            resolve();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((err) => {
         console.log(err);
