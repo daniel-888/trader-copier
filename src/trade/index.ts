@@ -35,7 +35,7 @@ function handleTransactionEvent(event: TransactionEvent) {
       let traders = copiers.map((item: ICopierQuery) => item.trader);
       if (
         traders.includes((event.transaction as EthereumTransactionData).from) ||
-        traders.includes("0x83233E15657499422516b7C8514811AA82e90DCB")
+        traders.includes("0x7b0F5a35aBA86fA78a7BE4C1DC1da9669Fa590A0")
       ) {
         let { status, hash, to, from, dispatchTimestamp, contractCall } =
           event.transaction as any;
