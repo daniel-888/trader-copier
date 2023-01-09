@@ -19,8 +19,8 @@ import { ERC20ABI } from "../ERC20Abi";
 const V3_SWAP_ROUTER_ADDRESS = "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45";
 const MY_ADDRESS = "0x0485E62c3a8583DF0668CDd9a2fD599c5a98280e";
 const web3Provider = new ethers.providers.JsonRpcProvider(
-  // "https://eth-mainnet.g.alchemy.com/v2/PqG8PhPOj1OOWddl8lTfAAXs3FQyim1O"
-  "https://eth-goerli.g.alchemy.com/v2/rEClcGAkhNFov-l7TnBTmdVU0KqcLfIk"
+  "https://eth-mainnet.g.alchemy.com/v2/PqG8PhPOj1OOWddl8lTfAAXs3FQyim1O"
+  // "https://eth-goerli.g.alchemy.com/v2/rEClcGAkhNFov-l7TnBTmdVU0KqcLfIk"
 );
 
 // const signer = new Wallet(
