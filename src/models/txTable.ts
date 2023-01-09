@@ -86,11 +86,11 @@ const TxSchema: Schema = new Schema({
           params: {
             params: {
               tokenIn: { type: String },
-              tokenOut: { String },
+              tokenOut: { type: String },
               fee: { type: Number },
-              recipient: { String },
-              amountIn: { String },
-              amountOutMinimum: { String },
+              recipient: { type: String },
+              amountIn: { type: String },
+              amountOutMinimum: { type: String },
               sqrtPriceLimitX96: { type: Number },
             },
             amountIn: { type: String },

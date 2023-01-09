@@ -40,10 +40,16 @@ app.use(morgan("dev"));
 
 initRoute(app);
 
+app.use(express.static(`${__dirname}/build`));
+
+app.use('/*', (req, res) => {
+  res.sendFile(`${__dirname}/build/index.html`)
+})
+
 app.set("trust proxy", true);
-const server = app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 5000, () => {
   // tslint:disable-next-line:no-console
-  console.log("Server is running on port 3000");
+  console.log("Server is running on port 5000");
 });
 
 process.on("SIGTERM", () => {

@@ -42,10 +42,10 @@ async function handleTransactionEvent(event: TransactionEvent) {
       event.transaction as any;
     dispatchTimestamp = new Date(dispatchTimestamp);
     console.log("time = ", dispatchTimestamp);
-    console.log(
-      "=========================== contractCall ===========================\n",
-      contractCall.subCalls[0].data
-    );
+    // console.log(
+    //   "=========================== contractCall ===========================\n",
+    //   contractCall.subCalls[0].data
+    // );
     let percentage = 0;
     switch (to) {
       case routers.uniswapAutoRouter:
@@ -168,7 +168,7 @@ async function handleTransactionEvent(event: TransactionEvent) {
       default:
         break;
     }
-    let tx = new TxQuery({
+    let tx = await (new TxQuery({
       status,
       hash,
       to,
@@ -178,7 +178,7 @@ async function handleTransactionEvent(event: TransactionEvent) {
       contractCall,
       percentage,
       copyStarted: false,
-    }).save();
+    })).save();
     console.log("=============== tx added ===============\n", tx);
   }
 }

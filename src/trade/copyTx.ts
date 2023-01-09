@@ -1,4 +1,4 @@
-import { copyUniswapTx, copySushiswapTx } from "./copyRouteTx";
+// import { copyUniswapTx, copySushiswapTx } from "./copyRouteTx";
 
 import { ITxQuery } from "../models/txTable";
 import CopierQuery, { ICopierQuery } from "../models/copier";
@@ -14,10 +14,10 @@ const copyTx = async (tx: ITxQuery): Promise<void> => {
   for (let i = 0; i < copiers.length; i++) {
     switch (tx.to) {
       case routers.uniswapAutoRouter:
-        await copyUniswapTx(tx, copiers[i]);
+        // await copyUniswapTx(tx, copiers[i]);
         break;
       case routers.sushiswapRouter:
-        await copySushiswapTx(tx, copiers[i]);
+        // await copySushiswapTx(tx, copiers[i]);
         break;
       default:
         break;
