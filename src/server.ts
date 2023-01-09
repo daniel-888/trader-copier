@@ -38,13 +38,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(morgan("dev"));
 
-initRoute(app);
+app.use(express.static(`${__dirname.substring(0, __dirname.length - 4)}/build`));
 
-app.use(express.static(`${__dirname}/build`));
-
-app.use('/*', (req, res) => {
-  res.sendFile(`${__dirname}/build/index.html`)
+app.use('/', (req, res) => {
+  res.sendFile(`${__dirname.substring(0, __dirname.length - 4)}/build/index.html`)
 })
+
+initRoute(app);
 
 app.set("trust proxy", true);
 const server = app.listen(process.env.PORT || 5000, () => {

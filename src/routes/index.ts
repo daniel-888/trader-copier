@@ -11,12 +11,12 @@ import routerV1 from "./v1";
 const router: Router = Router();
 
 // /root API which demonstrates
-router.get("/", (req: Request, res: Response) => {
-  res.status(200).json({
-    version: "0.1.0",
-    date: Date.now(),
-  });
-});
+// router.get("/", (req: Request, res: Response) => {
+//   res.status(200).json({
+//     version: "0.1.0",
+//     date: Date.now(),
+//   });
+// });
 
 // main router
 router.use("/v1", routerV1);
